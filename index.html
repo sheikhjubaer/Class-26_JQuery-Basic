@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font links -->
+
+    <!-- CSS links -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>JQuery template</title>
+
+    <style>
+      .panel {
+        cursor: pointer;
+      }
+      .slideshow {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    
+    <section class="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- js -->
+            <h1 class="mb-3">Click the button to change the text</h1>
+            <button type="button" class="btn btn-danger" onclick="TextChange()">Text Change</button>
+            <button type="button" class="btn btn-success" onclick="TextReset()">Text Reset</button>
+            <p id="p" class="mt-5 pt-3 pb-3 bg-warning" style="font-weight: 700; font-size: 23px;">Lorem ipsum dolor sit, amet.</p>
+            <!-- js -->
+
+            <!-- jq -->
+
+            <div class="jumbotron text-center">
+              <h1>Click the button to show the alert.</h1>
+              <button class="btn btn-danger" id="show-alert">Show alert</button>
+            </div>
+            
+            <div class="jumbotron text-center">
+              <h1>Click the button to show the text below the button.</h1>
+              <button class="btn btn-danger" id="hide">Fade Out</button>
+              <button class="btn btn-success" id="show">Fade In</button>
+              <h3 id="h1" class="mt-3">Lorem ipsum dolor sit, amet.</h3>
+            </div>
+
+            <div class="jumbotron text-center">
+              <h1>Click the button to show the text below the button. (Same button for Show/Hide)</h1>
+              <button class="btn btn-danger" id="s-h">Fade Toggle</button>
+              <button class="btn btn-danger" id="s-t">Fade To</button>
+              <h3 class="h3 mt-3">Lorem ipsum dolor sit, amet.</h3>
+            </div>
+
+            <div class="panel jumbotron text-center bg-primary mb-0">
+              <h3 class="text-white">Click Me ( Slide Toggle )</h3>
+            </div>
+            <div class="slideshow jumbotron text-center bg-success">
+              <h4 class="text-white">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Eum dicta est omnis earum officiis quibusdam velit distinctio dignissimos neque, sapiente.</h4>
+            </div>
+
+            <!-- jq -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- JS links -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      // JQ template Start
+      $(document).ready(function() {
+        // Show alert
+        $('#show-alert').click(function() {
+          alert("Hello Jubaer"); // A modal will showed up whenever the site will reload.
+        });
+        // Hide text
+        $('#hide').click(function() {
+          $('#h1').fadeOut("Fast");  // 3000 mili seconds
+        });
+        // Show text
+        $('#show').click(function() {
+          $('#h1').fadeIn(1000);
+        });
+        // toggle: Show/Hide
+        $('#s-h').click(function() {
+          $('.h3').fadeToggle();
+        });
+        // fade to
+        $('#s-t').click(function() {
+          $('.h3').fadeTo(1000, .5);
+        });
+        // slideshow
+        $('.panel').click(function() {
+          $('.slideshow').slideToggle("Fast");
+        });
+
+      });
+      // JQ template End
+    </script>
+    
+  </body>
+</html>
